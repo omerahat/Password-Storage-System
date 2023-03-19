@@ -6,23 +6,23 @@ This is a simple command-line based password storage system implemented in Pytho
 
 To run the script, you need to have the following software installed on your computer:
 
-##### - Python 
+- Python 
 
-##### - SQLite3
+- SQLite3
 
 ## How to Use
 
-- Clone or download the repository to your local machine.
+1. Clone or download the repository to your local machine.
 
-- Install the Requirements
+2. Install the Requirements
 
-- Run the program using the command .
+3. Run the program using the command .
 
 ```
 python main.py
 ```
 
-- Follow the on-screen instructions to use the password storage system.
+4. Follow the on-screen instructions to use the password storage system.
 
 ## Features
 
