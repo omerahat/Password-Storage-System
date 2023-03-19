@@ -10,7 +10,6 @@ To run the script, you need to have the following software installed on your com
 
 ##### - SQLite3
 
-
 ## How to Use
 
 - Clone or download the repository to your local machine.
