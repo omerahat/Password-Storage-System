@@ -50,7 +50,7 @@ while True:
         password_storage.search_password_full(platform_name)
 
     elif user_input == "4":
-        short_name = input("Enter the platform name: ")
+        short_name = input("Enter the short name: ")
         password_storage.search_password_short(short_name)
     else:
         print("Invalid selection.")

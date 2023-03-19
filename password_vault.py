@@ -1,44 +1,36 @@
 import sqlite3
 import random
-
+import string
 
 def generate_password():
-    number_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    lowercase_letter_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
-                            's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    uppercase_letter_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-                            'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    special_char_list = ['`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '}',
-                       '{', '|', ';', "'", ':', '"', ',', '.', '/', '<', '>', '?']
 
     print("Please answer the questions with 'Y' for Yes or 'N' for No.")
-    number_check = input("Would you like to include numbers?").strip().upper()
-    lowercase_check = input("Would you like to include lowercase letters?").strip().upper()
-    uppercase_check = input("Would you like to include uppercase letters?").strip().upper()
-    special_check = input("Would you like to include special characters?").strip().upper()
+    number_check = input("Would you like to include numbers? ").strip().upper()
+    lowercase_check = input("Would you like to include lowercase letters? ").strip().upper()
+    uppercase_check = input("Would you like to include uppercase letters? ").strip().upper()
+    punctuation_check = input("Would you like to include punctuation characters? ").strip().upper()
 
-    final_list = []
+    final_str=""
 
     if number_check == "Y":
-        final_list += number_list
+        final_str += string.digits
 
     if lowercase_check == "Y":
-        final_list += lowercase_letter_list
+        final_str += string.ascii_lowercase
 
     if uppercase_check == "Y":
-        final_list += uppercase_letter_list
+        final_str += string.ascii_uppercase
 
-    if special_check == "Y":
-        final_list += special_char_list
+    if punctuation_check == "Y":
+        final_str += string.punctuation
 
     password_length = int(input("What should be the length of the password?"))
 
-    final_list_last = []
+    final_password=""
 
     for i in range(0, password_length):
-        index = random.randint(0, len(final_list))
-        final_list_last.append(final_list[index])
-    final_password = "".join(final_list_last)
+        index = random.randint(0, len(final_str))
+        final_password +=final_str[index]
     print("Your final password: {}".format(final_password))
 
     return final_password
